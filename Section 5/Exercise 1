@@ -1,0 +1,10 @@
+// Exercise 1: Using cout
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    cout << "Hi Frank!";
+    return 0;
+}
