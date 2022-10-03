@@ -1,0 +1,11 @@
+// Exercise 2: Using cout and insertion operator
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int x {3};
+    cout << "Sally has " << x << " dogs."; 
+    return 0;
+}
