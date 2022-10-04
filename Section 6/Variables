@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  // not initialised variable: int age;
+  // to initialise : int age {21};
+  /* if variable is not initialised and its outputed, it will
+  return random jumble of value stored at that memory address*/
+  //cout << age << endl;
+
+  cout << "Enter the width of the room: ";
+  int room_width {0};
+  cin >> room_width;
+  
+  cout << "Enter the length of the room: ";
+  int room_length {0};
+  cin >> room_length;
+
+  cout << "The area of the room is " << room_width * room_length << " square feet" << endl;
+  
+  return 0;
+}
