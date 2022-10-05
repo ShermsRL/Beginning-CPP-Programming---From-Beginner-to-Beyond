@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int num1 {10};
+    int num2 {20};
+    
+    // Assignment operator
+    num1 = 100;
+    // l-value and r-value
+    // l-value - location of that variable
+    // r-value - contents
+    // c++ check at compile time if its okay to assign 100 to num1 by looking at the types
+    
+    // chaining assignment operators
+    num1 = num2 = 1000;
+    
+    // 100 = num1;
+    // will produce error as 100 do not have a location, its lacking l-value
+    
+    cout << "num1 is " << num1 << endl;
+    cout << "num2 is " << num2 << endl;
+    
+    return 0;
+    
+}
