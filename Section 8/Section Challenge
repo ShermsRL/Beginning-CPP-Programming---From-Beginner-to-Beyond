@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+// dollar = 100cents
+// quarter = 25cents
+// dime = 10cents
+// nickel = 5cents
+// penny = 1cent
+
+int main() {
+    
+    cout << "Enter an amount in cents: ";
+    int cents {};
+    cin >> cents;
+    
+    int dollar{}, quarter{}, dime{}, nickel{}, penny{};
+    const int dollar_to_cent {100};
+    const int quarter_to_cent {25};
+    const int dime_to_cent {10};
+    const int nickel_to_cent {5};
+    const int penny_to_cent {1};
+    
+    dollar = cents / dollar_to_cent;
+    cents -= (dollar * dollar_to_cent);
+    quarter = cents / quarter_to_cent;
+    cents -= (quarter * quarter_to_cent);
+    dime = cents / dime_to_cent;
+    cents -= (dime * dime_to_cent);
+    nickel = cents / nickel_to_cent;
+    cents -= (nickel * nickel_to_cent);
+    penny = cents / penny_to_cent;
+
+    
+    cout << "You can provide this change as follows:" << endl;
+    cout << "dollars: " << dollar << endl;
+    cout << "quarters: " << quarter << endl;
+    cout << "dimes: " << dime << endl;
+    cout << "nickels: " << nickel << endl;
+    cout << "pennies: " << penny << endl;
+    
+    return 0;
+    
+}
