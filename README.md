@@ -12,3 +12,5 @@ Section 6: Variables and constants
 Section 7: Arrays and Vectors
 
 Section 8: Statements and Operators
+
+Section 9: Controlling Program Flow
