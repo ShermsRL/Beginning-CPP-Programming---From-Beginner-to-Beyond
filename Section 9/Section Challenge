@@ -1,0 +1,104 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    
+    char selection{};
+    vector <int> num;
+    
+    do {
+        cout << endl;
+        cout << "P - Print numbers" << endl;
+        cout << "A - Add a number" << endl;
+        cout << "M - Display a mean of the numbers" << endl;
+        cout << "S - Display the smallest number" << endl;
+        cout << "L - Display the largest number" << endl;
+        cout << "Q - Quit" << endl;
+        cout << "\nEnter your choice: ";
+        cin >> selection;
+        
+        switch(selection){
+            case 'p':
+            case 'P':
+            {
+                if (num.size()<1)
+                    cout << "[] - the list is empty" << endl;
+                else {
+                    cout << "[ ";
+                    for (size_t index{0}; index<num.size(); index++) { // from video solution: use range based for loop to make things simple
+                    // range based for loop - for(auto number: num)
+                        cout << num.at(index);
+                        cout << " ";
+                    }
+                    cout << "]" << endl;
+                }
+                break;
+            
+            }
+                
+            case 'a':
+            case 'A':
+            {
+                cout << "Enter the number to be added to the list: ";
+                int num_entered{};
+                cin >> num_entered;
+                num.push_back(num_entered);
+                cout << "" << num_entered << " added" << endl;
+                break;
+                
+            }
+                
+            case 'm':
+            case 'M':
+            {
+                if (num.size()<1)
+                    cout << "Unable to calculate the mean - no data" << endl;
+                else {
+                    double result{};
+                    for (size_t index{0}; index<num.size(); index++)
+                        result += num.at(index);
+                    cout << "The mean of the data is " << (result / num.size()) << endl;
+                }
+                break;
+                
+            }
+            
+            case 's':
+            case 'S':
+            {
+                if (num.size()<1)
+                    cout << "Unable to determine the smallest number - list is empty" << endl;
+                else 
+                    cout << "The smallest number is: " << *min_element(num.begin(), num.end()) << endl;;
+                break;
+            }
+            
+            
+            case 'l':
+            case 'L':
+            {
+                if (num.size()<1)
+                    cout << "Unable to determine the largest number - list is empty" << endl;
+                else 
+                    cout << "The largest number is: " << *max_element(num.begin(), num.end()) << endl;;
+                break;
+            }
+            
+            case 'q':
+            case 'Q':
+            cout << "Goodbye" << endl;
+                break;
+            
+            default:
+                cout << "That is not a function of this program, please enter a valid character" << endl;
+                
+        }
+        
+    } while (selection != 'q' && selection != 'Q');
+    
+    return 0;
+    
+}
