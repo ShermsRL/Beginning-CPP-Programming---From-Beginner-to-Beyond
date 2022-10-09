@@ -1,0 +1,41 @@
+// Substitution Cipher
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    
+    string alphabet {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+    string key {"XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr"};
+    
+    string secret_message{};
+    cout << "Enter a secret message: ";
+    getline(cin, secret_message);
+    
+    string encrypted_message{};
+    cout << "\nEncrypting message...." << endl;
+    for (char character: secret_message) {
+        size_t index = alphabet.find(character);
+        if (index != string::npos)
+            character = key.at(index);
+        encrypted_message += character;
+    }
+    cout << "\nEncrypted message: " << encrypted_message << endl;
+    
+    string decrypted_message{};
+    cout << "\nDecrypting message..." << endl;
+    for (char character: encrypted_message){
+        size_t index = key.find(character);
+        if (index != string::npos)
+            character = alphabet.at(index);
+        decrypted_message += character;
+        
+    }
+    cout << "\nDecrypted Message: " << decrypted_message << endl;
+    
+    cout << endl;
+    return 0;
+    
+}
