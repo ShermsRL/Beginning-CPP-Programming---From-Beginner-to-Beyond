@@ -16,3 +16,5 @@ Section 8: Statements and Operators
 Section 9: Controlling Program Flow
 
 Section10: Character and String
+
+Section11: Functions
