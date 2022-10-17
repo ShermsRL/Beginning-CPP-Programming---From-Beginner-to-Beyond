@@ -1,0 +1,54 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main() {
+    
+    int score{100};
+    int *score_ptr {&score}; // pointing to the memory address of score
+    
+    cout << *score_ptr << endl; // dereference the score pointer, print out the variable whats at the mem address
+    
+    *score_ptr = 200; // score pointer is dereferenced, put 200 at where its pointing at
+    
+    cout << *score_ptr << endl;
+    cout << score << endl; // affected the original score variable
+    
+    cout << "\n--------------------------------------" << endl;
+    
+    double high_temp {100.7};
+    double low_temp {37.4};
+    double *temp_ptr {&high_temp}; // pointing to high temp mem address
+    
+    cout << *temp_ptr << endl; // dereferenced, print out the variable at the mem address its pointing to: 100.7
+    temp_ptr = &low_temp;
+    cout << *temp_ptr << endl;
+    
+    cout << "\n--------------------------------------" << endl;
+    
+    string name {"Frank"};
+    string *string_ptr {&name};
+    
+    cout << *string_ptr << endl;
+    name = "James";
+    cout << *string_ptr << endl;
+    
+    cout << "\n--------------------------------------" << endl;
+    vector<string> stooges {"Larry", "Moe" , "Curly"};
+    vector<string> *vector_ptr {nullptr};
+    
+    vector_ptr = &stooges;
+    
+    cout << "First stooge: " << (*vector_ptr).at(0) << endl;
+    
+    cout << "Stooges: ";
+    for (auto stooge: *vector_ptr)
+        cout << stooge << " ";
+    cout << endl;
+    
+    
+    return 0;
+    
+}
