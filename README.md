@@ -15,6 +15,8 @@ Section 8: Statements and Operators
 
 Section 9: Controlling Program Flow
 
-Section10: Character and String
+Section 10: Character and String
 
-Section11: Functions
+Section 11: Functions
+
+Section 12: Pointers
