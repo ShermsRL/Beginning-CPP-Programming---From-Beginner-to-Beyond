@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    int *int_ptr {nullptr};
+    
+    int_ptr = new int; // allocate dynamically on runtime from heap
+    cout << int_ptr << endl; // address of where the int is on the heap
+    delete int_ptr; // when you are done, delete the pointer to free up the storage
+    
+    size_t size{0};
+    double *temp_ptr {nullptr};
+    
+    cout << "How many temps? ";
+    cin >> size;
+    
+    temp_ptr = new double[size]; // create an array of size 100 element
+    cout << temp_ptr << endl; // address of the first element of the array
+    delete  [] temp_ptr;
+    
+    return 0;
+    
+}
