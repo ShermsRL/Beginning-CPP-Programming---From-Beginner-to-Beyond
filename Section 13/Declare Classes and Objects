@@ -1,0 +1,54 @@
+// Declare Classes and Objects
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class Player {
+  // attributes
+  string name;
+  int health;
+  int xp;
+  
+  // methods
+  void talk(string);
+  bool is_dead();
+  
+  
+}; // need semicolon at the end of class declaration
+
+class Account {
+  // attributes - initialising 
+  string name {"Account"};
+  double balance {0.0};
+
+  //methods
+  bool deposit(double);
+  bool withdraw(double);
+};
+
+int main() {
+
+  Account frank_account;
+  Account jim_account;
+  
+  // Creating player object based on the Player class
+  Player frank;
+  Player hero;
+
+  // players is an array of player objects
+  Player players[] {frank, hero};
+
+  // Collection of player objects
+  vector<Player> player_vec {frank};
+  player_vec.push_back(hero);
+
+  // Creating objects on the heap
+  Player *enemy {nullptr};
+  enemy = new Player;
+
+  delete enemy;
+  
+  return 0;
+}
