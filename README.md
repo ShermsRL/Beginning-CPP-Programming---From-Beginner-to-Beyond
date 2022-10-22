@@ -20,3 +20,5 @@ Section 10: Character and String
 Section 11: Functions
 
 Section 12: Pointers
+
+Section 13: OOP - Classes and Objects
