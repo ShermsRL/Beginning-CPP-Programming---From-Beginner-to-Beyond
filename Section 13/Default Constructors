@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+
+// Default Constructors will be automatically created if you do not have constructor in the class
+
+using namespace std;
+
+class Player {
+private:
+    std::string name;
+    int health;
+    int xp;
+public:
+    void set_name(std::string name_val) {
+        name = name_val;
+    }
+    std::string get_name() {
+        return name;
+    }
+    //Default Constructors
+    Player() {
+        name = "None";
+        health = 100;
+        xp = 3;
+    }
+    // Constructor expects these things to be passed when it is called
+    Player(std::string name_val, int health_val, int xp_val) {
+        name = name_val;
+        health = health_val;
+        xp = xp_val;
+    }
+};
+
+int main() {
+    Player hero; // dont have to provide values as there is a default constructor that is in the class
+    Player sherman {"Sherman", 100, 13}; // Player is initialised with these variables
+    sherman.set_name("Shermannnn");
+    cout << sherman.get_name() << endl;
+    
+    return 0;
+    
+}
