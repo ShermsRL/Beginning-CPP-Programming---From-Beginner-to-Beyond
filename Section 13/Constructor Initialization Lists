@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Player {
+private:
+    std::string name;
+    int health;
+    int xp;
+public:
+    // Overloaded Constructors
+    Player();
+    Player(std::string name_val);
+    Player(std::string name_val, int health_val, int xp_val);
+};
+
+//Player::Player() { // this does not initialise the variables with these value, it is assigning them to already created ones
+//    name = "None";
+//    health = 0;
+//    xp = 0;
+//}
+
+// Initialise Lists Syntax - order does not matter on which is initialised first, it depends on the order declared in the class
+Player::Player()
+    : name {"None"}, health{0}, xp{0} {
+}
+
+Player::Player(std::string name_val) 
+    : name {name_val}, health{0}, xp{0} {
+}
+
+Player::Player(std::string name_val, int health_val, int xp_val) 
+    : name {name_val}, health{health_val}, xp{xp_val} {
+}
+
+int main() {
+    
+    Player empty;
+    Player sherman {"Sherman"};
+    Player villain {"Villain", 100, 55};
+    return 0;
+    
+}
